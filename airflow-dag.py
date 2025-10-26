@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from datetime import datetime, timedelta
 import requests
 import boto3
@@ -300,3 +301,6 @@ submit_solution_task = PythonOperator(
 
 # Define task dependencies
 populate_queue_task >> collect_messages_task >> reassemble_phrase_task >> submit_solution_task
+=======
+# airflow DAG goes here
+>>>>>>> f46cd7ddda0d4d55e1c4f67350bd42d543603481

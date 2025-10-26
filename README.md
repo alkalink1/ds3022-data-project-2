@@ -148,9 +148,9 @@ Be sure that your DAG runs successfully within Airflow when you executed in your
 ## Notes / Submission
 
 1. Be sure to fork this repository and commit/push your code back to it for grading.
-2. Your Prefect flow should be saved to a file named `prefect.py`.
+2. Your Prefect flow should be saved to a file named `prefect-flow.py`.
 3. When running your Prefect flow you may use the remote host profile we set up in class `[profiles.uvasds]`, or  `[profiles.local]`. Either is fine.
-4. If you attempt to write an Airflow DAG that should be saved to a file named `airflow.py`.
+4. If you attempt to write an Airflow DAG that should be saved to a file named `airflow-dag.py`.
 5. Secondary Prefect flows or Airflow DAGs are permissible. That is, one flow may also trigger another flow; one DAG may call another DAG, etc.
 6. Your code should log using the built-in logging methods for either Prefect or Airflow. You do not need to use a separate logging package. Do not save or commit log files to your repo.
 7. Do not save or commit any data or database files.
