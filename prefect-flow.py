@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 import requests
 import boto3
 import time
 from typing import List, Tuple
 from prefect import flow, task, get_run_logger
 
-# NOTE: Per rubric, use Prefect's logger only; do not import or configure Python's `logging`.
-
-# AWS SQS client (region per assignment)
+# AWS SQS client
 sqs = boto3.client("sqs", region_name="us-east-1")
 
 
@@ -52,13 +49,6 @@ def collect_messages(sqs_url: str, deadline_seconds: int = 1080) -> List[Tuple[i
     """
     Task 2: Poll the SQS queue continuously and collect all 21 messages.
     Returns a list of tuples (order_no, word) for all collected messages.
-
-    Improvements vs. initial version:
-    - Uses a **time-based deadline** (>900s) instead of `max_attempts` to avoid early exit.
-    - Prefect-only logging (no prints).
-    - Inline comments that explain key choices.
-    - Simple **deduplication** guard by `seen_receipt_handles` to avoid double counting if
-      visibility timeouts cause re-deliveries.
     """
     logger = get_run_logger()
 
@@ -264,6 +254,3 @@ if __name__ == "__main__":
     # Run the flow locally (helpful for quick manual tests)
     final = sqs_message_pipeline()
     print(f"Final result: {final}")
-=======
-# prefect flow goes here
->>>>>>> f46cd7ddda0d4d55e1c4f67350bd42d543603481
