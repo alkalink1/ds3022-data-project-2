@@ -199,6 +199,7 @@ def submit_solution(**context) -> bool:
 
     submit_queue_url = "https://sqs.us-east-1.amazonaws.com/440848399208/dp2-submit"
     log.info("TASK 4: Submitting solution to submission queue…")
+    log.info("Phrase to submit: '%s'", phrase)
     log.info("Submission queue URL: %s", submit_queue_url)
     log.info("Message attributes: uvaid='eju2pk', platform='airflow'")
 
